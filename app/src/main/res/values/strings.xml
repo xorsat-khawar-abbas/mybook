@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyBook</string>
+    <string name="label_button_about">About Us</string>
+</resources>

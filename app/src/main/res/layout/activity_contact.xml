@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <!-- Action bar -->
+
+    <RelativeLayout style="@style/MyActionBar">
+
+        <TextView
+            style="@style/MyActionBarTitle"
+            android:text="Contact Us" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/contact_editText_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please give your name"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/contact_editText_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please give your phone number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/contact_editText_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Please give your message"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_send"
+        android:text="Send" />
+
+</LinearLayout>
