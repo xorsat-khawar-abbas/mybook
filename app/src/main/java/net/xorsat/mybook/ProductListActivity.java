@@ -1,7 +1,9 @@
 package net.xorsat.mybook;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,16 +21,17 @@ public class ProductListActivity extends Activity {
     ListView mListView;
     Context context;
     ArrayList<Product> arrayList;
+    ProductDatasource mProductDatasource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
         setContentView(R.layout.activity_product_list);
+        new get_data_AsynchTask().execute();
+    }
 
-        arrayList = new ArrayList<>();
-        final ProductDatasource mProductDatasource = new ProductDatasource();
-        arrayList = mProductDatasource.getList();
+    private void populate(){
         mListView = (ListView) findViewById(R.id.productlist_listview);
         // Initialized ArrayAdapter
         ProductAdapter mProductAdapter = new ProductAdapter(context, arrayList);
@@ -44,8 +47,36 @@ public class ProductListActivity extends Activity {
                 Toast.makeText(context, mProduct.getProduct_name(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private class get_data_AsynchTask extends AsyncTask<Void, Void, Void> {
+        ProgressDialog mProgressDialog;
 
-        // Set ArrayAdapter to above ListView
+        @Override
+        protected void onPreExecute() {
+            mProgressDialog = new ProgressDialog(context);
+            mProgressDialog.setMessage("Please wait");
+            mProgressDialog.setTitle("Loading..");
+            mProgressDialog.show();
 
+            arrayList = new ArrayList<>();
+            mProductDatasource = new ProductDatasource();
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            arrayList = mProductDatasource.getList();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            if (mProgressDialog.isShowing()) {
+                mProgressDialog.dismiss();
+            }
+            populate();
+
+            super.onPostExecute(aVoid);
+        }
     }
 }

@@ -30,13 +30,14 @@ public class ProductDatasource {
 
         try {
 
-            for (int i = 0; i <= 10; i++) {
+            for (int i = 0; i <= 100; i++) {
                 Product item = new Product();
                 item.setProduct_id(i + "");
                 item.setProduct_name("Product No:" + (i + 1));
                 item.setProduct_price(i * 10 + " PKR");
                 item.setProduct_description("Description of product " + i);
                 item.setProduct_image("ic_stub.png");
+                Thread.sleep(500);
                 arrayList.add(item);
             }
 
