@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- Action bar -->
+
+    <RelativeLayout style="@style/MyActionBar" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Order Now"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/order_editText_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name" />
+
+        <EditText
+            android:id="@+id/order_editText_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Phone Number"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/order_editText_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Address"
+            android:inputType="textPostalAddress|textMultiLine" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/row_product_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_stub" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/row_product_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Product Name"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/row_product_price"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:singleLine="true"
+                    android:text="120 PKR" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/order_editText_productQuantity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Quantity"
+            android:inputType="numberDecimal"
+            android:text="1" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_order"
+        android:text="Order Now" />
+
+</LinearLayout>

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyBook</string>
     <string name="label_button_about">About Us</string>
+    <string name="message_product_share">Hi, I am trying %1$s using an
+android application, its price is %2$s. If you also want to enjoy it, install the
+same app on your mobile from \n https://play.google.com/store/apps/details?
+id=net.xorsat.mybook</string>
 </resources>

@@ -3,6 +3,7 @@ package net.xorsat.mybook;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -31,23 +32,23 @@ public class ProductListActivity extends Activity {
         new get_data_AsynchTask().execute();
     }
 
-    private void populate(){
+    private void populate() {
         mListView = (ListView) findViewById(R.id.productlist_listview);
         // Initialized ArrayAdapter
         ProductAdapter mProductAdapter = new ProductAdapter(context, arrayList);
 
         mListView.setAdapter(mProductAdapter);
-
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Product mProduct = arrayList.get(position);
-                mProductDatasource.insert(mProduct);
-                Toast.makeText(context, mProduct.getProduct_name(), Toast.LENGTH_SHORT).show();
+                Product _mProduct = arrayList.get(position);
+                ProductDetailActivity.mProduct = _mProduct;
+                startActivity(new Intent(context, ProductDetailActivity.class));
+                //Toast.makeText(context, mProduct.getProduct_name(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+
     private class get_data_AsynchTask extends AsyncTask<Void, Void, Void> {
         ProgressDialog mProgressDialog;
 

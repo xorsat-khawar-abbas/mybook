@@ -7,7 +7,7 @@
 
         <TextView
             style="@style/MyActionBarTitle"
-            android:text="Product List" />
+            android:text="Books List" />
     </RelativeLayout>
 
     <ListView

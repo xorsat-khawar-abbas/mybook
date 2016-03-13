@@ -18,10 +18,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AboutActivity" />
+        <activity android:name="net.xorsat.mybook.AboutActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".ThanksActivity" />
         <activity android:name=".ProductListActivity" />
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".OrderActivity" />
     </application>
 
 </manifest>
