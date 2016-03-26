@@ -1,19 +1,18 @@
 package net.xorsat.mybook;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
-import android.view.Menu;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.Toast;
+import android.os.Bundle;
+import android.widget.TextView;
 
 public class ThanksActivity extends Activity {
+    public static String MESSAGE;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_thanks);
-		
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_thanks);
+        TextView mTextView = (TextView) findViewById(R.id.textView);
+        mTextView.setText(MESSAGE);
+
+    }
 }
