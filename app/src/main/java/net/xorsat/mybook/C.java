@@ -6,6 +6,7 @@ public class C {
     public static final String URL_ROOT = "http://apps.xorsat.com/";
     public static final String URL_SERVICE = URL_ROOT + "index.php/webservice";
 
+    public static final String URL_JSON = "http://adweblab.com/ego/products.php";
 
     public static String APP_ID = "712a7ec8-ef1e-4b5f-adca-53108f0a4cd3";
 
