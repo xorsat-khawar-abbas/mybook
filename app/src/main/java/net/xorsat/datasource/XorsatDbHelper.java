@@ -3,6 +3,7 @@ package net.xorsat.datasource;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import net.xorsat.contract.ProductContract;
 
@@ -19,11 +20,13 @@ public class XorsatDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        Log.i("XorsatDbHelper", "onCreate");
         db.execSQL(ProductContract.SQL_CREATE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.i("XorsatDbHelper", "onUpgrade");
         db.execSQL(ProductContract.SQL_DROP);
         onCreate(db);
     }
