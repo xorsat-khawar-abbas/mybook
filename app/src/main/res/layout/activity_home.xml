@@ -54,6 +54,12 @@
                 android:onClick="onClick_products"
                 android:layout_weight="1"
                 android:text="Products" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick_gcm"
+                android:layout_weight="1"
+                android:text="Registerg GCM" />
 
 
         </LinearLayout>

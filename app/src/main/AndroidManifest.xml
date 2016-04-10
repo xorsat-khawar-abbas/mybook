@@ -2,6 +2,9 @@
     package="net.xorsat.mybook">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
 
     <application
         android:allowBackup="true"
@@ -24,6 +27,16 @@
         <activity android:name=".ProductListActivity" />
         <activity android:name=".ProductDetailActivity" />
         <activity android:name=".OrderActivity" />
+        <activity android:name=".GCMActivity" />
+        <receiver android:name="net.xorsat.receiver.GCMReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="net.xorsat.mybook" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="net.xorsat.service.GCMService" />
+
     </application>
 
 </manifest>

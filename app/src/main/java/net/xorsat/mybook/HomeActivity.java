@@ -28,4 +28,9 @@ public class HomeActivity extends Activity {
         Intent intent = new Intent(this, ProductListActivity.class);
         startActivity(intent);
     }
+
+    public void onClick_gcm(View view) {
+        Intent intent = new Intent(this, GCMActivity.class);
+        startActivity(intent);
+    }
 }
